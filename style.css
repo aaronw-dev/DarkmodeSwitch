@@ -1,0 +1,97 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin:0;
+  overflow:hidden;
+}
+
+@keyframes WipeDark{
+  from {
+    background-color: #0a0a0a;
+    transform:scale(0)
+  }
+  to {
+    background-color: #0a0a0a;
+    transform:scale(1.2)
+  }
+}
+
+
+@keyframes WipeLight{
+  from {
+    background-color: white;
+    transform:scale(0)
+  }
+  to {
+    background-color: white;
+    transform:scale(1.2)
+  }
+}
+
+.transitionscreen{
+  background:#0a0a0a;
+  transform:scale(0);
+
+  width:100vw;
+  height:100vw;
+  
+  position:absolute;
+  top:-45%;
+  left:0;
+  border-radius:50%;
+}
+
+.toggle{
+  height:fit-content;
+  width:150px;
+  border-radius:5vw;
+  background-color:white;
+  border: 5px solid black;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding:2px;
+  z-index:1;
+}
+
+.toggle.switched{
+  background-color:black;
+  border: 5px solid white;
+}
+
+.switch{
+  height:40px;
+  width:40px;
+  border-radius:40px;
+  padding:10px;
+  background-color:black;
+  transition: 200ms;
+  position:relative;
+  left: 0;
+  transform: translatX(0)
+}
+
+.switch.switched{
+  left:100%;
+  background-color:white;
+  transform: translateX(-60px)
+}
+
+.switch.switched svg{
+  fill:black;
+}
+
+.switch svg{
+  fill:white;
+}
+.transitionscreen.dark{
+  animation-duration: 1s;
+  animation-name: WipeDark;
+  animation-fill-mode: forwards;
+}
+.transitionscreen.light{
+  animation-duration: 1s;
+  animation-name: WipeLight;
+  animation-fill-mode: forwards;
+}
