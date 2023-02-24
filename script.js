@@ -9,6 +9,10 @@ transition.addEventListener("animationend", function() {
 });
 function Clicked(element) {
   dark = !dark
+  if(dark)
+    document.title = "dark mode...";
+  else
+    document.title = "light mode!!! ōۃō";
   transition.classList.toggle("dark")
   transition.classList.toggle("light")
   element.classList.toggle("switched")
